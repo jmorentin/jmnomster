@@ -106,7 +106,7 @@
 </div>
 <div class="clear"></div>
 
-<div class="row">
+<div class="row col-10 offset-1">
   <% @place.comments.each do |comment| %>
     <div class="col-12 col-sm-6">
       <blockquote>
@@ -119,11 +119,11 @@
     </div>
   <% end %>
 </div>
-<div class="row">
+<div class="row col-10 offset-1">
   <% @place.photos.each do |photo| %>
-    <div class="col-12 col-sm-6">
-      <%= photo.caption %>
-      <%= image_tag "#{photo.picture.url}" %>
+    <div class="col-4 col-sm-2">
+      <%= image_tag photo.picture.to_s, class: 'img-fluid' %>
+      <b><%= photo.caption %></b>
     </div>
   <% end %>
 </div>
